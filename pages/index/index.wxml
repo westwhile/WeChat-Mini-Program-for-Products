@@ -1,0 +1,11 @@
+<view class="container">
+    <button bindtap="handleLogin" wx:if="{{!userInfo}}">登录</button>
+    <view wx:else>
+        <input placeholder="搜索商品" bindinput="handleSearch" />
+        <scroll-view scroll-y>
+            <block wx:for="{{recommendedProducts}}" wx:key="id">
+                <view>{{item.name}} - {{item.price}}</view>
+            </block>
+        </scroll-view>
+    </view>
+</view>
